@@ -1,0 +1,357 @@
+:root {
+    --cor-primaria: #606C38;
+    --cor-secundaria: #283618;
+    --cor-alternativa3: #FEFAE0;
+    --cor-alternativa: #DDA15E;
+    --cor-alternativa2: #BC6C25;
+    --cor-bg: #FFFFFF;
+    --fonte-principal: "Montserrat", sans-serif;
+    --fonte-logo: "Faster One", system-ui;
+}
+
+* {
+    font-family: var(--fonte-principal);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    padding: 20px 32px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color: var(--cor-bg);
+}
+
+.logo {
+    font-family: var(--fonte-logo);
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar ul {
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    list-style: none;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    padding-bottom: 6px;
+}
+
+.nav-bar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--cor-primaria);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.nav-bar a:hover::after {
+    transform: scaleX(1);
+}
+
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: var(--cor-primaria);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.modal-overlay {
+    display: none;
+}
+
+.modal {
+    margin:0 auto;
+    position: relative;
+
+    width: 100%;
+    max-width: 430px;
+    max-height: 90vh;
+    overflow-y: auto;
+
+    padding: 40px;
+    border-radius: 16px;
+
+    background-color: var(--cor-bg);
+    box-shadow: 0 16px 50px rgba(40, 54, 24, 0.18);
+
+    animation: aparecer 0.25s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fechar-modal {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+
+    border: none;
+    background: transparent;
+
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1;
+
+    color: var(--cor-secundaria);
+    cursor: pointer;
+
+    transition: color 0.2s ease;
+}
+
+.fechar-modal:hover {
+    color: var(--cor-alternativa2);
+}
+
+.modal-cabecalho {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo-modal {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.modal-cabecalho h2 {
+    margin: 0 0 8px;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--cor-secundaria);
+}
+
+.modal-cabecalho p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #777777;
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 8px;
+
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--cor-secundaria);
+}
+
+.campo input {
+    width: 100%;
+    height: 46px;
+
+    padding: 0 14px;
+    border: 1px solid #D8D8D0;
+    border-radius: 8px;
+    outline: none;
+
+    background-color: var(--cor-bg);
+    color: var(--cor-secundaria);
+    font-size: 14px;
+
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.campo input::placeholder {
+    color: #A0A097;
+}
+
+.campo input:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(96, 108, 56, 0.12);
+}
+
+.senha-container {
+    position: relative;
+}
+
+.mostrar-senha {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+
+    border: none;
+    background: transparent;
+
+    color: var(--cor-primaria);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.opcoes-login {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    margin: 4px 0 24px;
+    font-size: 12px;
+}
+
+.lembrar-login {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.lembrar-login input {
+    accent-color: var(--cor-primaria);
+}
+
+.link-destaque {
+    color: var(--cor-alternativa2);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.link-destaque:hover {
+    text-decoration: underline;
+}
+
+.botao-entrar,
+.botao-cadastro {
+    width: 100%;
+    min-height: 46px;
+
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.botao-entrar {
+    border: 1px solid var(--cor-primaria);
+    background-color: var(--cor-primaria);
+    color: var(--cor-bg);
+}
+
+.botao-entrar:hover {
+    background-color: var(--cor-secundaria);
+    border-color: var(--cor-secundaria);
+}
+
+.botao-entrar:active {
+    transform: scale(0.98);
+}
+
+.texto-cadastro {
+    margin: 24px 0 0;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.7;
+    color: #777777;
+}
+
+button:focus-visible,
+a:focus-visible,
+.login-container:focus-visible {
+    outline: 2px solid var(--cor-alternativa2);
+    outline-offset: 3px;
+}
+
+@media (max-width: 1100px) {
+    .header {
+        flex-wrap: wrap;
+    }
+
+    .nav-bar {
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .nav-bar ul {
+        justify-content: flex-start;
+        padding: 8px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 16px 20px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .modal {
+        padding: 34px 24px;
+    }
+
+    .modal-cabecalho h2 {
+        font-size: 19px;
+    }
+
+    .opcoes-login {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+.mensagem-login {
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--cor-alternativa2);
+}

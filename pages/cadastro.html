@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro | BikeCity</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Faster+One&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/cadastro.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="/index.html" class="logo">BikeCity</a>
+
+        <a href="/index.html" class="voltar-login">
+            Voltar para a página inicial
+        </a>
+    </header>
+
+    <main class="cadastro-pagina">
+
+        <section class="cadastro-card">
+
+            <div class="cadastro-cabecalho">
+                <span class="logo logo-cadastro">BikeCity</span>
+
+                <h1>Crie sua conta</h1>
+
+                <p>Prepare-se para explorar a cidade sobre duas rodas.</p>
+            </div>
+
+            <form id="formCadastro">
+
+                <div class="campo-cadastro">
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" autocomplete="name"
+                        required minlength="3">
+                </div>
+
+                <div class="campo-cadastro">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" autocomplete="email"
+                        required>
+                </div>
+
+                <div class="campo-cadastro">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="+55 (11) 99999-9999" required
+                        minlength="11">
+                </div>
+
+                <div class="campo-cadastro">
+                    <label for="dataNascimento">Data de nascimento</label>
+                    <input type="date" id="dataNascimento" name="dataNascimento" placeholder="01/01/2001" required
+                        autocomplete="bday-day">
+                </div>
+
+                <div class="campo-cadastro">
+                    <label>Sexo</label>
+
+                    <div class="opcoes-sexo">
+                        <label>
+                            <input type="radio" name="sexo" value="feminino" required>
+                            Feminino
+                        </label>
+
+                        <label>
+                            <input type="radio" name="sexo" value="masculino">
+                            Masculino
+                        </label>
+
+                        <label>
+                            <input type="radio" name="sexo" value="nao_informar">
+                            Prefiro não informar
+                        </label>
+                    </div>
+                </div>
+
+                <div class="campo-cadastro">
+                    <label for="cidade">Cidade</label>
+                    <input list="cidades" id="cidade" name="cidade">
+
+                    <datalist id="cidades">
+                        <option value="Salvador">
+                        <option value="Belo Horizonte">
+                        <option value="Rio de Janeiro">
+                        <option value="Florianópolis">
+                        <option value="São Paulo">
+                    </datalist>
+                </div>
+
+                <div class="campo-cadastro">
+                    <label for="estado">Estado</label>
+
+                    <select id="estado" name="estado" required>
+                        <option value="" disabled selected>
+                            Selecione seu estado
+                        </option>
+                        <option value="BA">Bahia</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                    </select>
+                </div>
+
+
+                <div class="campo-cadastro">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" placeholder="Mínimo de 8 caracteres"
+                        autocomplete="new-password" minlength="8" required>
+                </div>
+
+                <div class="campo-cadastro">
+                    <label for="confirmarSenha">Confirmar senha</label>
+                    <input type="password" id="confirmarSenha" name="confirmarSenha"
+                        placeholder="Digite a senha novamente" autocomplete="new-password" minlength="8" required>
+                </div>
+
+                <label class="aceite-termos">
+                    <input type="checkbox" id="termos" required>
+                    <span>
+                        Li e aceito os
+                        <a href="termos.html">termos de uso</a>
+                        e a política de privacidade.
+                    </span>
+                </label>
+
+                <button type="submit" class="botao-cadastrar">
+                    Criar minha conta
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+<script src="/js/cadastro.js"></script>
+</html>
