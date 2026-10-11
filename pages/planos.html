@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Planos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Faster+One&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/planos.css">
+</head>
+<body>
+
+    <header class="header">
+        <span class="logo">BikeCity</span>
+
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="aluguel-bicicletas.html">Alugue uma bicicleta</a></li>
+                <li><a href="#">Pontos de aluguel</a></li>
+                <li><a href="#">Planos</a></li>
+                <li><a href="#">Sobre nós</a></li>
+                <li><a href="#">Entre em contato</a></li>
+            </ul>
+        </nav>
+
+        <div onclick="abrirModal()" class="login-container">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-user preview-icon">
+                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+            </svg>
+            <span>Login</span>
+        </div>
+    </header>
+
+    <main>
+        <h2>Planos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Plano</th>
+                    <th>Usos incluídos</th>
+                    <th>Preços</th>
+                    <th>Minutos excedidos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="2">Uso Único</td>
+                    <td>1 viagem de até 15 min</td>
+                    <td>R$ 4,50</td>
+                    <td rowspan="4">+ R$ 0,35 / min</td>
+                </tr>
+                <tr>
+                    <td>1 viagem de até 30 min</td>
+                    <td>R$ 7,50</td>
+                </tr>
+                <tr>
+                    <td>Passe Parque</td>
+                    <td>1 viagem de 60 min</td>
+                    <td>R$ 18,00</td> 
+                </tr>
+                <tr>
+                    <td>Diário</td>
+                    <td>4 viagens de 45 min no dia</td>
+                    <td>R$ 25,00 / dia</td>
+                </tr>
+                <tr>
+                    <td>Semanal</td>
+                    <td>4 viagens/dia de 40 min</td>
+                    <td>R$ 195,00 / semana</td>
+                    <td rowspan="3">+ R$ 0,25 / min</td>
+                </tr>
+                <tr>
+                    <td>Mensal</td>
+                    <td>4 viagens/dia de 40 min</td>
+                    <td>R$ 299,00 / mês</td>
+                </tr>
+                <tr>
+                    <td>Anual</td>
+                    <td>4 viagens/dia de 40 min</td>
+                    <td>R$ 1.430,00 / ano (ou 12x R$ 119,90)</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+<footer class="footer">
+    <p><strong>BikeCity</strong></p>
+    <p>Telefone: (11) 99856-7852</p>
+    <p>E-mail: bikego_brasil@gmail.com</p>
+</footer>
+    <script src="/js/script.js"></script>
+
+</body>
+</html>
