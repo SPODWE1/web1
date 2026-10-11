@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aluguel de Bicicletas</title>
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/cadastro.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Faster+One&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <span class="logo">BikeCity</span>
+
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="aluguel-bicicletas.html">Alugue uma bicicleta</a></li>
+                <li><a href="#">Pontos de aluguel</a></li>
+                <li><a href="#">Planos</a></li>
+                <li><a href="#">Sobre nós</a></li>
+                <li><a href="#">Entre em contato</a></li>
+            </ul>
+        </nav>
+
+        <div onclick="abrirModal()" class="login-container">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-user preview-icon">
+                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+            </svg>
+            <span>Login</span>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="titulo-aluguel">Conheça nossas opções</h1>
+        
+        <div class="fotos-bike">
+            <figure class="img-aluguel">
+                <img src="/imagens/bike_normal.jpg" alt="Bicicleta tradicional" width="330" height="330">
+                <figcaption>Bicicleta Urbana (Tradicional)</figcaption>
+            </figure>
+
+            <figure>
+                <img src="/imagens/bike_eletrica.jpg" alt="Bicicleta elétrica" width="330" height="330">
+                <figcaption>Bicicleta Elétrica</figcaption>
+            </figure>
+
+            <figure>
+                <img src="/imagens/bike_cesta.jpg" alt="Bicicleta com cesta" width="330" height="330">
+                <figcaption>Bicicleta com Cestinha</figcaption>
+            </figure>
+
+            <figure>
+                <img src="/imagens/bike_cadeirinha.jpg" alt="Bicicleta com Cadeirinha" width="330" height="330">
+                <figcaption>Bicicleta com Cadeirinha</figcaption>
+            </figure>
+
+            <figure>
+                <img src="/imagens/bike_infantil.jpg" alt="Bicicleta infantil" width="330" height="330">
+                <figcaption>Bicicleta Infantil</figcaption>
+            </figure>
+        </div>
+      </main>
+    <footer class="footer">
+        <p><strong>BikeCity</strong></p>
+        <p>Telefone: (11) 99856-7852</p>
+        <p>E-mail: bikego_brasil@gmail.com</p>
+</footer>
+    <script src="/js/script.js"></script>
+</body>
+</html>
