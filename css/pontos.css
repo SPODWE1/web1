@@ -1,0 +1,267 @@
+
+
+   .pontos-pagina {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 8px 32px 0;
+    box-sizing: border-box;
+}
+
+.pontos-cabecalho h1 {
+    margin: 0 0 8px;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--cor-secundaria);
+}
+
+.pontos-cabecalho p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #777777;
+}
+
+
+
+.pontos-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 16px;
+    margin: 24px 0;
+}
+
+.filtro {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 200px;
+}
+
+.filtro label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--cor-secundaria);
+}
+
+.filtro select {
+    height: 46px;
+    padding: 0 14px;
+    border: 1px solid #D8D8D0;
+    border-radius: 8px;
+    background-color: var(--cor-bg);
+    color: var(--cor-secundaria);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.filtro select:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(96, 108, 56, 0.12);
+}
+
+.pontos-contagem {
+    margin: 0 0 0 auto;
+    padding-bottom: 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--cor-primaria);
+}
+
+/* ---------- Lista + mapa ---------- */
+
+.pontos-conteudo {
+    display: grid;
+    grid-template-columns: minmax(300px, 400px) 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.pontos-lista {
+    list-style: none;
+    margin: 0;
+    padding: 0 6px 0 0;
+    max-height: 620px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pontos-vazio {
+    margin: 0;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--cor-alternativa3);
+    color: var(--cor-secundaria);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+#mapa {
+    height: 620px;
+    border-radius: 12px;
+    background-color: #E9E9E1;
+    z-index: 0; /* mantém o mapa abaixo de modais e menus */
+}
+
+.mapa-indisponivel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 14px;
+    color: #777777;
+}
+
+
+.ponto-card {
+    padding: 18px 20px;
+    border: 1px solid #D8D8D0;
+    border-radius: 12px;
+    background-color: var(--cor-bg);
+    cursor: pointer;
+}
+
+.ponto-card.selecionado {
+    border-color: var(--cor-alternativa2);
+    background-color: var(--cor-alternativa3);
+    box-shadow: inset 4px 0 0 var(--cor-alternativa2);
+}
+
+.ponto-card h3 {
+    margin: 0 0 6px;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--cor-secundaria);
+}
+
+.ponto-endereco,
+.ponto-horario {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #666666;
+}
+
+.ponto-horario {
+    margin-bottom: 12px;
+}
+
+.ponto-bikes {
+    list-style: none;
+    margin: 0 0 14px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.ponto-bikes li {
+    padding: 4px 10px;
+    border-radius: 999px;
+    background-color: #EEF1E4;
+    color: var(--cor-secundaria);
+    font-size: 12px;
+}
+
+.ponto-bikes li.tipo-filtrado {
+    background-color: var(--cor-primaria);
+    color: var(--cor-alternativa3);
+}
+
+.ponto-acoes {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 13px;
+}
+
+.botao-ponto {
+    min-height: 36px;
+    padding: 0 16px;
+    border: 1px solid var(--cor-primaria);
+    border-radius: 8px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-bg);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.botao-ponto:hover {
+    background-color: var(--cor-secundaria);
+    border-color: var(--cor-secundaria);
+}
+
+
+.marcador span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 3px solid var(--cor-bg);
+    border-radius: 50%;
+    background-color: var(--cor-primaria);
+    color: var(--cor-alternativa3);
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(40, 54, 24, 0.35);
+}
+
+.marcador-selecionado span {
+    background-color: var(--cor-alternativa2);
+    font-size: 16px;
+}
+
+
+.footer {
+    width: 100%;
+    max-width: 1920px;
+    margin-top: 40px;
+    padding: 60px 20px;
+    box-sizing: border-box;
+    background-color: #DDA15E;
+    color: #fff;
+    text-align: center;
+}
+
+
+@media (max-width: 900px) {
+    .pontos-pagina {
+        padding: 8px 20px 0;
+    }
+
+    .pontos-conteudo {
+        grid-template-columns: 1fr;
+    }
+
+    #mapa {
+        order: -1;
+        height: 380px;
+    }
+
+    .pontos-lista {
+        max-height: none;
+        overflow-y: visible;
+        padding-right: 0;
+    }
+
+    .pontos-contagem {
+        margin-left: 0;
+        padding-bottom: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .filtro {
+        width: 100%;
+    }
+}
