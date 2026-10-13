@@ -1,3 +1,5 @@
+<!--Criado caso o professor não aceite a versão do mapa com Leaflet pois utiliza ajax. Alterações de estilo e fotos ainda para serem feitas.-->
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -10,17 +12,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Faster+One&family=Montserrat:wght@400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Faster+One&family=Montserrat:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
-
-    <!-- Usando Leaflet, n precisa de chave de API -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
 
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/pontos.css">
 </head>
 
-
+<body>
     <header class="header">
         <span class="logo">BikeCity</span>
 
@@ -47,44 +46,18 @@
     </header>
 
     <main class="pontos-pagina">
-
         <div class="pontos-cabecalho">
             <h1>Pontos de aluguel</h1>
             <p>Encontre o ponto mais próximo e veja quais bicicletas estão disponíveis.</p>
         </div>
 
-        <div class="pontos-filtros">
-            <div class="filtro">
-                <label for="filtroTipo">Tipo de bicicleta</label>
-                <select id="filtroTipo">
-                    <option value="">Todos os tipos</option>
-                </select>
-            </div>
-
-            <div class="filtro">
-                <label for="filtroBairro">Bairro</label>
-                <select id="filtroBairro">
-                    <option value="">Todos os bairros</option>
-                    <!-- as opções são criadas pelo js/pontos.js -->
-                </select>
-            </div>
-
+        <div class="pontos-meta">
             <p id="contagemPontos" class="pontos-contagem" aria-live="polite"></p>
         </div>
 
-        <div class="pontos-conteudo">
-            <section aria-label="Lista de pontos de aluguel">
-                <ul id="listaPontos" class="pontos-lista"></ul>
-
-                <p id="mensagemVazia" class="pontos-vazio" hidden>
-                    Nenhum ponto tem esse tipo de bicicleta neste bairro.
-                    Escolha outro tipo ou outro bairro.
-                </p>
-            </section>
-
-            <div id="mapa" role="region" aria-label="Mapa dos pontos de aluguel"></div>
-        </div>
-
+        <section aria-label="Pontos de aluguel de bicicletas">
+            <div id="listaPontos" class="pontos-lista"></div>
+        </section>
     </main>
 
     <footer class="footer">
@@ -93,38 +66,63 @@
         <p>E-mail: bikego_brasil@gmail.com</p>
     </footer>
 
+    <div class="mapa-overlay" id="modalMapa" aria-hidden="true">
+        <div class="mapa-dialog" role="dialog" aria-modal="true" aria-labelledby="mapaTitulo">
+            <button type="button" class="mapa-fechar" id="fecharMapa" aria-label="Fechar mapa">
+                <svg aria-hidden="true" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" d="M6 6l12 12M18 6 6 18" />
+                </svg>
+            </button>
+
+            <div class="mapa-frame">
+                <iframe id="mapaIframe" title="Mapa do ponto de aluguel" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" src="about:blank"></iframe>
+            </div>
+
+            <aside class="mapa-info">
+                <span class="mapa-pin" aria-hidden="true">
+                    <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
+                        <circle cx="12" cy="10" r="2.5" />
+                    </svg>
+                </span>
+                <p class="pontos-kicker">Ponto de retirada</p>
+                <h2 id="mapaTitulo"></h2>
+                <p id="mapaEndereco" class="mapa-endereco"></p>
+
+                <div class="mapa-detalhes">
+                    <p class="mapa-rotulo">Funcionamento</p>
+                    <p id="mapaHorario" class="mapa-horario"></p>
+                    <p id="mapaBikes" class="mapa-bikes"></p>
+                </div>
+            </aside>
+        </div>
+    </div>
+
     <div class="modal-overlay" id="modalLogin" aria-hidden="true" onclick="fecharAoClicarFora(event)">
-
         <section class="modal" role="dialog" aria-modal="true" aria-labelledby="tituloModal">
-
             <button type="button" class="fechar-modal" onclick="fecharModal()" aria-label="Fechar modal">
                 &times;
             </button>
 
             <div class="modal-cabecalho">
                 <span class="logo logo-modal">BikeCity</span>
-
                 <h2 id="tituloModal">Bem-vindo de volta!</h2>
-
                 <p>Entre na sua conta para continuar.</p>
             </div>
 
             <form id="formLogin">
-
                 <div class="campo">
                     <label for="email">E-mail</label>
-
                     <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com"
                         autocomplete="email" required>
                 </div>
 
                 <div class="campo">
                     <label for="senha">Senha</label>
-
                     <div class="senha-container">
                         <input type="password" id="senha" name="senha" placeholder="Digite sua senha"
                             autocomplete="current-password" required>
-
                         <button type="button" class="mostrar-senha" onclick="alternarSenha()"
                             aria-label="Mostrar senha">
                             Mostrar
@@ -137,12 +135,10 @@
                         <input type="checkbox" name="lembrar">
                         <span>Lembrar de mim</span>
                     </label>
-
                     <a href="#" class="link-destaque">Esqueci minha senha</a>
                 </div>
 
                 <button type="submit" class="botao-entrar">Entrar</button>
-
             </form>
 
             <p class="texto-cadastro">
@@ -151,11 +147,9 @@
             </p>
 
             <p id="mensagemLogin" class="mensagem-login" aria-live="polite"></p>
-
         </section>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
     <script src="/js/script.js"></script>
     <script src="/js/pontos.js"></script>
 </body>
