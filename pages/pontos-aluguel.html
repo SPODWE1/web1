@@ -1,0 +1,157 @@
+<!--Criado caso o professor não aceite a versão do mapa com Leaflet pois utiliza ajax. Alterações de estilo e fotos ainda para serem feitas.-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pontos de aluguel | BikeCity</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Faster+One&family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/pontos.css">
+</head>
+
+<body>
+    <header class="header">
+        <span class="logo">BikeCity</span>
+
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/pages/aluguel-bicicletas.html">Alugue uma bicicleta</a></li>
+                <li><a href="/pages/pontos-aluguel.html">Pontos de aluguel</a></li>
+                <li><a href="/pages/planos.html">Planos</a></li>
+                <li><a href="#">Sobre nós</a></li>
+                <li><a href="#">Entre em contato</a></li>
+            </ul>
+        </nav>
+
+        <div onclick="abrirModal()" class="login-container">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-user preview-icon">
+                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+            </svg>
+            <span>Login</span>
+        </div>
+    </header>
+
+    <main class="pontos-pagina">
+        <div class="pontos-cabecalho">
+            <h1>Pontos de aluguel</h1>
+            <p>Encontre o ponto mais próximo e veja quais bicicletas estão disponíveis.</p>
+        </div>
+
+        <div class="pontos-meta">
+            <p id="contagemPontos" class="pontos-contagem" aria-live="polite"></p>
+        </div>
+
+        <section aria-label="Pontos de aluguel de bicicletas">
+            <div id="listaPontos" class="pontos-lista"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p><strong>BikeCity</strong></p>
+        <p>Telefone: (11) 99856-7852</p>
+        <p>E-mail: bikego_brasil@gmail.com</p>
+    </footer>
+
+    <div class="mapa-overlay" id="modalMapa" aria-hidden="true">
+        <div class="mapa-dialog" role="dialog" aria-modal="true" aria-labelledby="mapaTitulo">
+            <button type="button" class="mapa-fechar" id="fecharMapa" aria-label="Fechar mapa">
+                <svg aria-hidden="true" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" d="M6 6l12 12M18 6 6 18" />
+                </svg>
+            </button>
+
+            <div class="mapa-frame">
+                <iframe id="mapaIframe" title="Mapa do ponto de aluguel" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" src="about:blank"></iframe>
+            </div>
+
+            <aside class="mapa-info">
+                <span class="mapa-pin" aria-hidden="true">
+                    <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
+                        <circle cx="12" cy="10" r="2.5" />
+                    </svg>
+                </span>
+                <p class="pontos-kicker">Ponto de retirada</p>
+                <h2 id="mapaTitulo"></h2>
+                <p id="mapaEndereco" class="mapa-endereco"></p>
+
+                <div class="mapa-detalhes">
+                    <p class="mapa-rotulo">Funcionamento</p>
+                    <p id="mapaHorario" class="mapa-horario"></p>
+                    <p id="mapaBikes" class="mapa-bikes"></p>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalLogin" aria-hidden="true" onclick="fecharAoClicarFora(event)">
+        <section class="modal" role="dialog" aria-modal="true" aria-labelledby="tituloModal">
+            <button type="button" class="fechar-modal" onclick="fecharModal()" aria-label="Fechar modal">
+                &times;
+            </button>
+
+            <div class="modal-cabecalho">
+                <span class="logo logo-modal">BikeCity</span>
+                <h2 id="tituloModal">Bem-vindo de volta!</h2>
+                <p>Entre na sua conta para continuar.</p>
+            </div>
+
+            <form id="formLogin">
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com"
+                        autocomplete="email" required>
+                </div>
+
+                <div class="campo">
+                    <label for="senha">Senha</label>
+                    <div class="senha-container">
+                        <input type="password" id="senha" name="senha" placeholder="Digite sua senha"
+                            autocomplete="current-password" required>
+                        <button type="button" class="mostrar-senha" onclick="alternarSenha()"
+                            aria-label="Mostrar senha">
+                            Mostrar
+                        </button>
+                    </div>
+                </div>
+
+                <div class="opcoes-login">
+                    <label class="lembrar-login">
+                        <input type="checkbox" name="lembrar">
+                        <span>Lembrar de mim</span>
+                    </label>
+                    <a href="#" class="link-destaque">Esqueci minha senha</a>
+                </div>
+
+                <button type="submit" class="botao-entrar">Entrar</button>
+            </form>
+
+            <p class="texto-cadastro">
+                Ainda não tem uma conta?
+                <a href="/pages/cadastro.html" class="link-destaque">Cadastre-se</a>
+            </p>
+
+            <p id="mensagemLogin" class="mensagem-login" aria-live="polite"></p>
+        </section>
+    </div>
+
+    <script src="/js/script.js"></script>
+    <script src="/js/pontos.js"></script>
+</body>
+
+</html>
