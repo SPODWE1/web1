@@ -365,6 +365,203 @@ a:focus-visible,
     color: var(--cor-alternativa2);
 }
 
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    min-height: 450px;
+    padding: 60px;
+
+    background-image:
+        linear-gradient(
+            to left,
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.05)
+        ),
+        url("/images/home_page/Imagem_HomePage.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-conteudo {
+    width: 50%;
+    max-width: 550px;
+    color: white;
+    font-family: var(--fonte-principal);
+    text-align: right;
+}
+
+.hero-conteudo p {
+    font-size: clamp(25px, 3vw, 36px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.sobre-nos {
+    background-color: var(--cor-primaria);
+    color: var(--cor-bg);
+    padding: 20px 30px;
+}
+
+.section-title {
+    font-family: var(--fonte-principal);
+    font-size: 22px;
+    font-weight: 700;
+    padding: 8px;
+    margin: 0 0 20px;
+}
+
+.sobre-nos .section-title {
+    color: var(--cor-alternativa3);
+    padding-top: 12px;
+}
+
+.sobre-nos-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.sobre-nos-texto {
+    flex: 1;
+    min-width: 0;
+    font-family: var(--fonte-principal);
+    font-size: 15px;
+    line-height: 1.6;
+    text-align: justify;
+    margin: 0;
+}
+
+.sobre-nos-imagem {
+    flex: 1;
+    min-width: 0;
+}
+
+.sobre-nos-video {
+    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.depoimentos {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--cor-bg);
+    padding: 30px;
+}
+
+.depoimentos .section-title {
+    color: var(--cor-alternativa2);
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.depoimentos-lista {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 30px;
+}
+
+.depoimento-card {
+    flex: 1;
+    min-width: 0;
+    padding: 20px;
+    background-color: var(--cor-bg);
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(40, 54, 24, 0.2);
+}
+
+.depoimento-cliente {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.cliente-foto {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.cliente-nome {
+    font-family: var(--fonte-principal);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--cor-secundaria);
+    margin: 0;
+}
+
+.cliente-avaliacao {
+    color: #F4B400;
+    font-size: 24px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.estrela {
+    width: 17px;
+    height: 17px;
+    fill: #F4B400;
+    flex-shrink: 0;
+}
+
+.depoimento-texto {
+    font-family: var(--fonte-principal);
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--cor-secundaria);
+    text-align: justify;
+    margin: 0;
+}
+
+.faixa-inferior {
+    min-height: 40px;
+    background-color: var(--cor-alternativa);
+}
+
+@media (max-width: 650px) {
+    .sobre-nos {
+        padding: 20px;
+    }
+
+    .sobre-nos-conteudo {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .sobre-nos-imagem {
+        width: 100%;
+    }
+
+    .sobre-nos-imagem video {
+        height: 200px;
+    }
+
+    .depoimentos {
+        padding: 25px 20px;
+    }
+
+    .depoimentos-lista {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .depoimento-card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
 
 .titulo-aluguel{
     text-align: center;
