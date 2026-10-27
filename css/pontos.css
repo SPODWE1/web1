@@ -107,6 +107,7 @@ body {
 .ponto-grade {
     display: grid;
     grid-template-columns: 1.45fr 1fr;
+    grid-auto-rows: 280px;
     gap: 12px;
 }
 
@@ -372,17 +373,6 @@ body {
     color: var(--cor-primaria);
 }
 
-.footer {
-    width: 100%;
-    max-width: 1920px;
-    margin-top: 40px;
-    padding: 60px 20px;
-    box-sizing: border-box;
-    background-color: #DDA15E;
-    color: #fff;
-    text-align: center;
-}
-
 @media (max-width: 900px) {
     .pontos-pagina {
         padding: 8px 20px 0;
@@ -396,6 +386,10 @@ body {
     .ponto-mapa-botao,
     .ponto-foto img {
         min-height: 220px;
+    }
+
+    .ponto-grade {
+        grid-auto-rows: 220px;
     }
 
     .mapa-dialog {
