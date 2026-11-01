@@ -20,7 +20,7 @@ table {
 }
 
 thead {
-    background-color: var(--cor-primaria);
+    background-color: grey;
     color: var(--cor-alternativa3);
 }
 
@@ -36,15 +36,15 @@ td {
 }
 
 tbody tr:nth-child(even){
-    background-color: #a1b55e;
+    background-color: #D8D8D0;
 }
 
 tbody tr:nth-child(odd){
-    background-color: #e1ecbf;
+    background-color: white;
 }
 
 tbody tr:hover {
-    background-color: var(--cor-primaria);
+    background-color: grey;
     color: var(--cor-alternativa3);
     font-weight: bold;
 }

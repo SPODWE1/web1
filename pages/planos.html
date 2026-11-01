@@ -15,9 +15,11 @@
 
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/planos.css">
+
+    <script src="/js/tabela.js"></script>
+    <script src="/js/script.js"></script>
 </head>
 <body>
-
     <header class="header">
         <span class="logo">BikeCity</span>
 
@@ -52,44 +54,7 @@
                     <th>Minutos excedidos</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td rowspan="2">Uso Único</td>
-                    <td>1 viagem de até 15 min</td>
-                    <td>R$ 4,50</td>
-                    <td rowspan="4">+ R$ 0,35 / min</td>
-                </tr>
-                <tr>
-                    <td>1 viagem de até 30 min</td>
-                    <td>R$ 7,50</td>
-                </tr>
-                <tr>
-                    <td>Passe Parque</td>
-                    <td>1 viagem de 60 min</td>
-                    <td>R$ 18,00</td> 
-                </tr>
-                <tr>
-                    <td>Diário</td>
-                    <td>4 viagens de 45 min no dia</td>
-                    <td>R$ 25,00 / dia</td>
-                </tr>
-                <tr>
-                    <td>Semanal</td>
-                    <td>4 viagens/dia de 40 min</td>
-                    <td>R$ 195,00 / semana</td>
-                    <td rowspan="3">+ R$ 0,25 / min</td>
-                </tr>
-                <tr>
-                    <td>Mensal</td>
-                    <td>4 viagens/dia de 40 min</td>
-                    <td>R$ 299,00 / mês</td>
-                </tr>
-                <tr>
-                    <td>Anual</td>
-                    <td>4 viagens/dia de 40 min</td>
-                    <td>R$ 1.430,00 / ano (ou 12x R$ 119,90)</td>
-                </tr>
-            </tbody>
+            <tbody id="tabela-planos"></tbody>
         </table>
     </main>
 
@@ -112,7 +77,5 @@
             <p>E-mail: bikego_brasil@gmail.com</p>
         </div>
 </footer>
-    <script src="/js/script.js"></script>
-
 </body>
 </html>

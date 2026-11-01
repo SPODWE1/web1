@@ -1,0 +1,44 @@
+[
+  {
+    "categoria": "Uso Único",
+    "descricao": "1 viagem de até 15 min",
+    "preco": "R$ 4,50",
+    "adicionalExcedente": "+ R$ 0,35 / min"
+  },
+  {
+    "categoria": "Uso Único",
+    "descricao": "1 viagem de até 30 min",
+    "preco": "R$ 7,50",
+    "adicionalExcedente": "+ R$ 0,35 / min"
+  },
+  {
+    "categoria": "Passe Parque",
+    "descricao": "1 viagem de 60 min",
+    "preco": "R$ 18,00",
+    "adicionalExcedente": "+ R$ 0,35 / min"
+  },
+  {
+    "categoria": "Diário",
+    "descricao": "4 viagens de 45 min no dia",
+    "preco": "R$ 25,00 / dia",
+    "adicionalExcedente": "+ R$ 0,35 / min"
+  },
+  {
+    "categoria": "Semanal",
+    "descricao": "4 viagens/dia de 40 min",
+    "preco": "R$ 195,00 / semana",
+    "adicionalExcedente": "+ R$ 0,25 / min"
+  },
+  {
+    "categoria": "Mensal",
+    "descricao": "4 viagens/dia de 40 min",
+    "preco": "R$ 299,00 / mês",
+    "adicionalExcedente": "+ R$ 0,25 / min"
+  },
+  {
+    "categoria": "Anual",
+    "descricao": "4 viagens/dia de 40 min",
+    "preco": "R$ 1.430,00 / ano (ou 12x R$ 119,90)",
+    "adicionalExcedente": "+ R$ 0,25 / min"
+  }
+]
