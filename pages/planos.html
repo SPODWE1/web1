@@ -12,12 +12,17 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Faster+One&family=Montserrat:wght@400;500;600;700&display=swap"
         rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/pricing/">
 
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/planos.css">
+
+    <script src="/js/tabela.js"></script>
+    <script src="/js/script.js"></script>
 </head>
 <body>
-
     <header class="header">
         <span class="logo">BikeCity</span>
 
@@ -42,7 +47,60 @@
     </header>
 
     <main>
-        <h2>Planos</h2>
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1>Planos</h1>
+        <p class="lead">Veja nosso planos mais escolhidos!</p>
+        </div>
+
+        <div class="container">
+        <div class="card-deck mb-3 text-center">
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Uso Único</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">R$7,50 <small class="text-muted">/ uso</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>1 viagem</li>
+              <li>30 minutos</li>
+              <li>+ R$ 0,35 / min excedidos</li>
+            </ul>
+            <a href="#tabela-container" class="btn btn-lg btn-block btn-plano">Saiba mais</a>
+          </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Diário</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">R$25 <small class="text-muted">/ dia</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>4 viagens</li>
+              <li>45 minutos / viagem</li>
+              <li>+ R$ 0,35 / min excedidos</li>
+            </ul>
+            <a href="#tabela-container" class="btn btn-lg btn-block btn-plano">Saiba mais</a>
+          </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Mensal</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">R$299 <small class="text-muted">/ mês</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>4 viagens</li>
+              <li>40 minutos / viagem</li>
+              <li>+ R$ 0,25 / min excedidos</li>
+            </ul>
+            <a href="#tabela-container" class="btn btn-lg btn-block btn-plano">Saiba mais</a>
+          </div>
+        </div>
+      </div>
+
+
+    <div id="tabela-container">
+        <h3 class="text-center">Encontre seu plano ideal!</h3>
         <table>
             <thead>
                 <tr>
@@ -52,45 +110,9 @@
                     <th>Minutos excedidos</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td rowspan="2">Uso Único</td>
-                    <td>1 viagem de até 15 min</td>
-                    <td>R$ 4,50</td>
-                    <td rowspan="4">+ R$ 0,35 / min</td>
-                </tr>
-                <tr>
-                    <td>1 viagem de até 30 min</td>
-                    <td>R$ 7,50</td>
-                </tr>
-                <tr>
-                    <td>Passe Parque</td>
-                    <td>1 viagem de 60 min</td>
-                    <td>R$ 18,00</td> 
-                </tr>
-                <tr>
-                    <td>Diário</td>
-                    <td>4 viagens de 45 min no dia</td>
-                    <td>R$ 25,00 / dia</td>
-                </tr>
-                <tr>
-                    <td>Semanal</td>
-                    <td>4 viagens/dia de 40 min</td>
-                    <td>R$ 195,00 / semana</td>
-                    <td rowspan="3">+ R$ 0,25 / min</td>
-                </tr>
-                <tr>
-                    <td>Mensal</td>
-                    <td>4 viagens/dia de 40 min</td>
-                    <td>R$ 299,00 / mês</td>
-                </tr>
-                <tr>
-                    <td>Anual</td>
-                    <td>4 viagens/dia de 40 min</td>
-                    <td>R$ 1.430,00 / ano (ou 12x R$ 119,90)</td>
-                </tr>
-            </tbody>
+            <tbody id="tabela-planos"></tbody>
         </table>
+    </div>
     </main>
 
     <footer class="footer">
@@ -112,7 +134,5 @@
             <p>E-mail: bikego_brasil@gmail.com</p>
         </div>
 </footer>
-    <script src="/js/script.js"></script>
-
 </body>
 </html>

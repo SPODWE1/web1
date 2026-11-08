@@ -1,9 +1,51 @@
+body {
+    font-family: var(--fonte-principal);
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.container {
+  max-width: 960px;
+}
+
+.pricing-header {
+  max-width: 700px;
+}
+
+.card-deck .card {
+  min-width: 220px;
+}
+
+.border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+.btn-plano {
+    color: #fff;
+    background-color: var(--cor-primaria);
+    border-color: var(--cor-secundaria);
+}
+
+.btn-plano:hover {
+    color: #fff;
+    background-color: var(--cor-alternativa2);
+    border-color: var(--cor-alternativa2);
+}
+
+.btn-plano:focus {
+    box-shadow: 0 0 0 0.2rem rgba(230, 149, 57, 0.4);
+}
 
 .tabela {
             margin: 0;
             padding: 20px;
             background-color: var(--cor-bg); 
             font-family: var(--fonte-principal);
+            scroll-margin-top: 80px;
         }
 
 table {
@@ -27,20 +69,20 @@ thead {
 th {
     padding: 15px;
     font-weight: bold;
-    border: 1px solid var(--cor-alternativa3);
+    border: 1px solid whitesmoke;
 }
 
 td {
     padding: 12px 15px;
-    border: 1px solid var(--cor-alternativa3);
+    border: 1px solid whitesmoke;
 }
 
 tbody tr:nth-child(even){
-    background-color: #a1b55e;
+    background-color: #D8D8D0;
 }
 
 tbody tr:nth-child(odd){
-    background-color: #e1ecbf;
+    background-color: white;
 }
 
 tbody tr:hover {
