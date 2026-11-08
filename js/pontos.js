@@ -7,8 +7,6 @@ const pontos = [
         horario: "Todos os dias, 5h às 23h",
         bikes: 12,
         imagem: "/images/pontos/ibirapuera.jpg",
-        imagemAlt: "Pessoa pedalando em uma ciclovia arborizada",
-        creditoFoto: "Davidson Luna",
         coordenadas: "-23.587416,-46.657634"
     },
     {
@@ -19,8 +17,6 @@ const pontos = [
         horario: "Todos os dias, 24 horas",
         bikes: 7,
         imagem: "/images/pontos/largo-da-batata.jpg",
-        imagemAlt: "Área urbana movimentada e arborizada",
-        creditoFoto: "Kseniia Lobko",
         coordenadas: "-23.567102,-46.693544"
     },
     {
@@ -31,8 +27,6 @@ const pontos = [
         horario: "Todos os dias, 6h às 22h",
         bikes: 9,
         imagem: "/images/pontos/avenida-paulista.jpg",
-        imagemAlt: "Rua moderna da cidade com ponte colorida e edifícios",
-        creditoFoto: "Vinícius Costa",
         coordenadas: "-23.561414,-46.655881"
     }
 ];
@@ -102,7 +96,6 @@ function criarCartao(ponto, indice) {
                 '<img src="' + escapar(ponto.imagem) + '" alt="' + escapar(ponto.imagemAlt) + '">' +
                 '<div class="ponto-foto-legenda">' +
                     "<p>" + iconeBike + " " + ponto.bikes + " bicicletas disponíveis</p>" +
-                    "<span>Foto: " + escapar(ponto.creditoFoto) + "</span>" +
                 "</div>" +
             "</figure>" +
             '<button type="button" class="ponto-mapa-botao" data-id="' + ponto.id + '" ' +
