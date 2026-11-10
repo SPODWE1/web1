@@ -20,6 +20,11 @@ body {
   min-width: 220px;
 }
 
+.modal-overlay .modal {
+    display: block;
+    height: auto;
+}
+
 .border-top { border-top: 1px solid #e5e5e5; }
 .border-bottom { border-bottom: 1px solid #e5e5e5; }
 
