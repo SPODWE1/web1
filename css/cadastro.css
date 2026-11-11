@@ -229,3 +229,88 @@
         font-size: 12px;
     }
 }
+
+.dialog-cadastro {
+    width: 90%;
+    max-width: 500px;
+    max-height: 85vh;
+
+    padding: 30px;
+    border: none;
+    border-radius: 16px;
+
+    background-color: var(--cor-bg);
+    color: var(--cor-secundaria);
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+.dialog-cadastro::backdrop {
+    background-color: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(3px);
+}
+
+.dialog-cabecalho {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.dialog-cabecalho h2 {
+    color: var(--cor-secundaria);
+    font-size: 22px;
+    margin: 0 0 10px;
+}
+
+.dialog-cabecalho p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+.dialog-conteudo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.dado-cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    padding: 12px;
+    border-radius: 8px;
+
+    background-color: var(--cor-alternativa3);
+    overflow-wrap: anywhere;
+}
+
+.dado-cadastro strong {
+    font-size: 12px;
+    color: var(--cor-primaria);
+}
+
+.dado-cadastro span {
+    font-size: 14px;
+    color: var(--cor-secundaria);
+}
+
+.dialog-cadastro .botao-cadastrar {
+    width: 100%;
+    margin-top: 5px;
+}
+
+@media (max-width: 500px) {
+
+    .dialog-cadastro {
+        padding: 22px;
+    }
+
+    .dialog-conteudo {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+}

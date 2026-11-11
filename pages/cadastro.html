@@ -87,33 +87,50 @@
                 </div>
 
                 <div class="campo-cadastro">
-                    <label for="cidade">Cidade</label>
-                    <input list="cidades" id="cidade" name="cidade">
+                    <label for="zona">Zona de São Paulo</label>
 
-                    <datalist id="cidades">
-                        <option value="Salvador">
-                        <option value="Belo Horizonte">
-                        <option value="Rio de Janeiro">
-                        <option value="Florianópolis">
-                        <option value="São Paulo">
-                    </datalist>
-                </div>
-
-                <div class="campo-cadastro">
-                    <label for="estado">Estado</label>
-
-                    <select id="estado" name="estado" required>
+                    <select id="zona" name="zona" required>
                         <option value="" disabled selected>
-                            Selecione seu estado
+                            Selecione sua zona
                         </option>
-                        <option value="BA">Bahia</option>
-                        <option value="MG">Minas Gerais</option>
-                        <option value="RJ">Rio de Janeiro</option>
-                        <option value="SC">Santa Catarina</option>
-                        <option value="SP">São Paulo</option>
+                        <option value="Norte">Zona Norte</option>
+                        <option value="Sul">Zona Sul</option>
+                        <option value="Leste">Zona Leste</option>
+                        <option value="Oeste">Zona Oeste</option>
+                        <option value="Centro">Centro</option>
+                        <option value="Grande São Paulo">Grande São Paulo</option>
                     </select>
                 </div>
 
+                <div class="campo-cadastro">
+                    <label for="bairro">Bairro</label>
+
+                    <input list="bairros" id="bairro" name="bairro" placeholder="Digite ou selecione seu bairro"
+                        required>
+
+                    <datalist id="bairros">
+                        <option value="Aclimação">
+                        <option value="Bela Vista">
+                        <option value="Bom Retiro">
+                        <option value="Butantã">
+                        <option value="Campo Belo">
+                        <option value="Casa Verde">
+                        <option value="Consolação">
+                        <option value="Freguesia do Ó">
+                        <option value="Ipiranga">
+                        <option value="Itaquera">
+                        <option value="Jabaquara">
+                        <option value="Lapa">
+                        <option value="Liberdade">
+                        <option value="Moema">
+                        <option value="Mooca">
+                        <option value="Pinheiros">
+                        <option value="Santana">
+                        <option value="Santo Amaro">
+                        <option value="Tatuapé">
+                        <option value="Vila Mariana">
+                    </datalist>
+                </div>
 
                 <div class="campo-cadastro">
                     <label for="senha">Senha</label>
@@ -131,7 +148,7 @@
                     <input type="checkbox" id="termos" required>
                     <span>
                         Li e aceito os
-                        <a href="termos.html">termos de uso</a>
+                        <a href="#">termos de uso</a>
                         e a política de privacidade.
                     </span>
                 </label>
@@ -142,10 +159,68 @@
 
             </form>
 
+
+            <dialog id="dialogCadastro" class="dialog-cadastro">
+
+                <div class="dialog-cabecalho">
+                    <h2>Conta criada com sucesso!</h2>
+                    <p>Confira os dados informados no cadastro.</p>
+                </div>
+
+                <div class="dialog-conteudo">
+
+                    <div class="dado-cadastro">
+                        <strong>Nome completo</strong>
+                        <span id="resumoNome"></span>
+                    </div>
+
+                    <div class="dado-cadastro">
+                        <strong>E-mail</strong>
+                        <span id="resumoEmail"></span>
+                    </div>
+
+                    <div class="dado-cadastro">
+                        <strong>Telefone</strong>
+                        <span id="resumoTelefone"></span>
+                    </div>
+
+                    <div class="dado-cadastro">
+                        <strong>Data de nascimento</strong>
+                        <span id="resumoData"></span>
+                    </div>
+
+                    <div class="dado-cadastro">
+                        <strong>Sexo</strong>
+                        <span id="resumoSexo"></span>
+                    </div>
+
+                    <div class="dado-cadastro">
+                        <strong>Zona</strong>
+                        <span id="resumoZona"></span>
+                    </div>
+
+                    <div class="dado-cadastro">
+                        <strong>Bairro</strong>
+                        <span id="resumoBairro"></span>
+                    </div>
+
+                    <div class="dado-cadastro">
+                        <strong>Senha</strong>
+                        <span>Não exibida por segurança</span>
+                    </div>
+
+                </div>
+
+                <button type="button" id="fecharDialog" class="botao-cadastrar">
+                    Fechar
+                </button>
+
+            </dialog>
+
         </section>
 
     </main>
-
+    <script src="/js/cadastro.js"></script>
 </body>
-<script src="/js/cadastro.js"></script>
+
 </html>
