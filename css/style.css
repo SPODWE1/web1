@@ -436,6 +436,11 @@ a:focus-visible,
     font-weight: 700;
     line-height: 1.2;
     margin: 0;
+    position: absolute;
+    top: 25%;          /* Posição vertical */
+    left: 8%;          /* Cola na esquerda com o mesmo recuo do menu/logo */
+    max-width: 500px;
+    text-align: left;
 
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
